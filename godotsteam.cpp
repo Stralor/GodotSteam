@@ -3201,8 +3201,8 @@ Array Steam::getItemsWithPrices() {
 String Steam::getResultItemProperty(uint32 index, const String &name, int32 this_inventory_handle) {
 	if (SteamInventory() != NULL) {
 		// Set up variables to fill
-		char value[256];
-		uint32 buffer_size = std::size(value);
+		char *value[256];
+		uint32 *buffer_size = std::size(value);
 		// If no inventory handle is passed, use internal one
 		if (this_inventory_handle == 0) {
 			this_inventory_handle = inventory_handle;
